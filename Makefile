@@ -3,7 +3,9 @@
 
 all:
 	cd game && make --quiet game
+	cd game && make --quiet game-debug
 	cd gui && make --quiet gui
+	cd gui && make --quiet gui-debug
 
 default:
 	cd game && make --quiet game

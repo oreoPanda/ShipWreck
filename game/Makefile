@@ -28,11 +28,11 @@ game-debug: $(objects-debug)
 	echo "Linking "$(objects-debug)
 	$(CC) $(objects-debug) -o $@ $(libs)
 
-%.o: %.c
+%.o: %.cpp
 	echo "Compiling "$<
 	$(CC) -c $< -o $@ $(cflags)
 
-%-debug.o: %.c
+%-debug.o: %.cpp
 	echo "Compiling "$<" for debugging"
 	$(CC) -c $< -o $@ $(cflags) -g
 
