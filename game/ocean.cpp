@@ -61,19 +61,47 @@ bool Ocean::fit(Shiptype t, int x, int y, Rotation r)
 	{
 		case UP:
 		{
-
+			for(int i = 0; i < t; i++)
+			{
+				if( (y-i) < 0 || this->grid[x][y-i] != NULL)
+				{
+					return false;
+				}
+			}
+			break;
 		}
 		case RIGHT:
 		{
-
+			for(int i = 0; i < t; i++)
+			{
+				if( (x+i) >= 10 || this->grid[x+i][y] != NULL)
+				{
+					return false;
+				}
+			}
+			break;
 		}
 		case DOWN:
 		{
-
+			for(int i = 0; i < t; i++)
+			{
+				if( (y+i) >= 10 || this->grid[x][y+i] != NULL)
+				{
+					return false;
+				}
+			}
+			break;
 		}
 		case LEFT:
 		{
-
+			for(int i = 0; i < t; i++)
+			{
+				if( (x-i) < 0 || this->grid[x-i][y] != NULL)
+				{
+					return false;
+				}
+			}
+			break;
 		}
 		default:
 		{
@@ -81,5 +109,7 @@ bool Ocean::fit(Shiptype t, int x, int y, Rotation r)
 			return false;
 		}
 	}
+
+	return true;
 }
 
