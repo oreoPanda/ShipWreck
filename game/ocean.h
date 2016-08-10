@@ -20,6 +20,7 @@
 #ifndef _OCEAN_H_
 #define _OCEAN_H_
 
+#include "logger.h"
 #include "ship.h"
 
 namespace game

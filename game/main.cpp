@@ -35,7 +35,16 @@ int main()
 	fits = o->fit(CARRIER, 0, 9, DOWN);
 	cout << fits << endl;
 
+	//FIXME there should be a valgrind leak error because I forgot to delete o
+
 	/*END Test case for Ocean::fit()*/
+#endif
+
+#if 0
+	/*Test case for the logger (by using the fit function)*/
+
+	Ocean o;
+	o.fit(CARRIER, 0, 0, (Rotation)5);
 #endif
 
 	return 0;

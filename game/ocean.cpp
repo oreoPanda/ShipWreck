@@ -20,6 +20,7 @@
 #include "ocean.h"
 
 using namespace game;
+using namespace logger;
 
 /*Constructor
  * Arguments: none
@@ -105,11 +106,18 @@ bool Ocean::fit(Shiptype t, int x, int y, Rotation r)
 		}
 		default:
 		{
-			//FIXME error message unknown rotation
+			begin_err();
+			cout << "Cannot fit ship with invalid rotation.";
+			end_err();
 			return false;
 		}
 	}
 
 	return true;
+}
+
+Ocean::~Ocean()
+{
+
 }
 

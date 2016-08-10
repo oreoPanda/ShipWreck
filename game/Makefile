@@ -16,8 +16,8 @@
 #along with chatnut.  If not, see <http://www.gnu.org/licenses/>.
 
 CC = g++
-objects-debug = main-debug.o ship-debug.o ocean-debug.o
-objects = main.o ship.o ocean.o
+objects-debug = logger-debug.o main-debug.o ship-debug.o ocean-debug.o
+objects = logger.o main.o ship.o ocean.o
 cflags = -Wall -Wextra
 
 game: $(objects)
